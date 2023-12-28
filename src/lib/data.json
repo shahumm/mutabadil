@@ -1,0 +1,123 @@
+[
+  {
+    "food": {
+      "grains": {
+        "oats": [
+          {
+            "brand": "Fauji Barley",
+            "company": "Fauji Foods",
+            "image": "src/lib/products/barley.png"
+          },
+          {
+            "brand": "Fauji Wheat",
+            "company": "Fauji Foods",
+            "image": "src/lib/products/wheat.png"
+          },
+          {
+            "brand": "Oatsom",
+            "company": "Shan Foods",
+            "image": "src/lib/products/wheat.png"
+          }
+        ]
+      },
+      "dairy": {
+        "milk": [
+          {
+            "brand": "Nurpur",
+            "company": "Fauji Foods",
+            "image": "src/lib/products/nurpur.png"
+          },
+          {
+            "brand": "Olpers",
+            "company": "Engro Foods",
+            "image": "src/lib/products/olpers.png"
+          },
+          {
+            "brand": "Prema",
+            "company": "At-Tahur Limited",
+            "image": "src/lib/products/prema.png"
+          },
+          {
+            "brand": "Anhaar",
+            "company": "Sharif Group",
+            "image": "src/lib/products/prema.png"
+          },
+          {
+            "brand": "Day Fresh",
+            "company": "DairyLand",
+            "image": "src/lib/products/prema.png"
+          },
+          {
+            "brand": "Good Milk",
+            "company": "Shakarganj Food Products",
+            "image": "src/lib/products/prema.png"
+          },
+          {
+            "brand": "Adams Milk",
+            "company": "Adam's Milk Products",
+            "image": "src/lib/products/prema.png"
+          },
+          {
+            "brand": "Gourmet Milk",
+            "company": "Gourmet Foods",
+            "image": "src/lib/products/prema.png"
+          }
+        ]
+      }
+    },
+    "cleansers": {
+      "personal": {
+        "toothpaste": [
+          {
+            "brand": "Medicam",
+            "company": "Fauji Foods",
+            "image": "https://www.placehold.co/500x500"
+          },
+          {
+            "brand": "English",
+            "company": "Fauji Foods",
+            "image": "https://www.placehold.co/500x500"
+          }
+        ],
+        "shampoo": [
+          {
+            "brand": "Head and Shoulders",
+            "company": "Fauji Foods",
+            "image": "https://www.placehold.co/500x500"
+          },
+          {
+            "brand": "Clear",
+            "company": "Fauji Foods",
+            "image": "https://www.placehold.co/500x500"
+          }
+        ]
+      },
+      "soaps": {
+        "personal": [
+          {
+            "brand": "Dettol",
+            "company": "Fauji Foods",
+            "image": "https://www.placehold.co/500x500"
+          },
+          {
+            "brand": "Saeed Ghani",
+            "company": "Engro Foods",
+            "image": "https://www.placehold.co/500x500"
+          }
+        ],
+        "surf": [
+          {
+            "brand": "Ariel",
+            "company": "Fauji Foods",
+            "image": "https://www.placehold.co/500x500"
+          },
+          {
+            "brand": "Surf Axcel",
+            "company": "Engro Foods",
+            "image": "https://www.placehold.co/500x500"
+          }
+        ]
+      }
+    }
+  }
+]
