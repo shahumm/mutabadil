@@ -1,5 +1,5 @@
 <script>
-	import logo from '$lib/images/logo.jpeg';
+	import logo from '$lib/products/nurpur.png';
 	import MenuOverlay from './Menu.svelte';
 	import './styles.css';
 	import 'iconify-icon';
