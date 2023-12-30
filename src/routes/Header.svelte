@@ -52,7 +52,7 @@
 	};
 </script>
 
-<video id="backgroundVideo" autoplay loop muted playsinline>
+<video id="backgroundVideo" autoplay loop muted playsinline preload="auto">
 	<source src="src/lib/video.mp4" type="video/mp4" />
 </video>
 
@@ -91,7 +91,6 @@
 		min-width: 100%;
 		min-height: 100%;
 		z-index: 0;
-
 		transition: opacity 0.8s ease;
 		opacity: 0.5;
 	}
@@ -122,19 +121,6 @@
 
 		z-index: 1000;
 	}
-
-	:global(body) {
-		background-color: #1e1e1e !important;
-		transition: background-color 0.25s ease-in-out !important;
-		color: var(--darkColor) !important;
-		transition: 0.25s ease-in-out;
-	}
-
-	/* :global(body.lightMode) {
-    background-color: #1e1e1e !important;
-    color: var(--lightColor) !important;
-    transition: 0.25s ease-in-out;
-  } */
 
 	.mode {
 		color: var(--darkColor);

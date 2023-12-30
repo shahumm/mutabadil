@@ -23,6 +23,7 @@
 	"type": "module",
 	"dependencies": {
 		"gsap": "^3.12.4",
-		"iconify-icon": "^1.0.8"
+		"iconify-icon": "^1.0.8",
+		"vanilla-tilt": "^1.8.1"
 	}
 }
