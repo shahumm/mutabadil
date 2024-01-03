@@ -22,7 +22,7 @@
 
 	<img
 		class="tiltMain"
-		src={'https://www.placehold.co/800x400'}
+		src={'src/lib/bird.png'}
 		alt={'Bird flying with water in its beak'}
 		on:load={handleImageLoad}
 		on:error={handleImageError}

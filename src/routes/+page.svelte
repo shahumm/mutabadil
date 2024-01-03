@@ -2,6 +2,9 @@
 	import dataTree from '$lib/data.json';
 	import { slide } from 'svelte/transition';
 
+	let searchQuery = '';
+	let filteredData = filterData(dataTree[0]);
+
 	function filterData(item) {
 		if (typeof item === 'object' && item !== null) {
 			if (Array.isArray(item)) {
@@ -25,9 +28,6 @@
 			return false;
 		}
 	}
-
-	let searchQuery = '';
-	let filteredData = filterData(dataTree[0]);
 
 	$: if (searchQuery) {
 		searchData();
@@ -58,7 +58,9 @@
 								let brandMatches = [];
 								if (Array.isArray(titleValue)) {
 									titleValue = titleValue.filter((brand) => {
-										let match = brand.brand.toLowerCase().includes(searchQueryLower);
+										let match =
+											brand.brand.toLowerCase().includes(searchQueryLower) ||
+											(brand.company && brand.company.toLowerCase() === searchQueryLower); // Check if company name matches
 										if (match) brandMatches.push(brand);
 										return !match;
 									});
@@ -110,26 +112,78 @@
 
 	let isAtTop = true;
 
-	// Run this code when the component mounts
 	onMount(() => {
 		function handleScroll() {
 			isAtTop = window.pageYOffset <= 10;
 		}
 
-		// Listen for scroll events
+		window.addEventListener('scroll', handleScroll);
+
+		handleScroll();
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	});
+
+	function sortBrands(data) {
+		const sortedData = {};
+		Object.entries(data).forEach(([key, value]) => {
+			sortedData[key] = {};
+
+			Object.entries(value).forEach(([subKey, subValue]) => {
+				sortedData[key][subKey] = {};
+
+				Object.entries(subValue).forEach(([titleKey, titleValue]) => {
+					sortedData[key][subKey][titleKey] = titleValue.sort((a, b) =>
+						a.brand.localeCompare(b.brand)
+					);
+				});
+			});
+		});
+		return sortedData;
+	}
+
+	function handleSort() {
+		filteredData = sortBrands(filteredData);
+	}
+
+	$: if (searchQuery) {
+		searchData();
+	} else {
+		filteredData = sortBrands(filterData(dataTree[0]));
+	}
+
+	// Scroll to Top
+	let showBackToTop = false; // State variable for back to top button visibility
+
+	onMount(() => {
+		function handleScroll() {
+			// Show button when scrolled 100px from the top
+			showBackToTop = window.pageYOffset > 100;
+		}
+
+		// Add scroll event listener
 		window.addEventListener('scroll', handleScroll);
 
 		// Initial check
 		handleScroll();
 
 		return () => {
-			// Remove listener when the component is destroyed
+			// Cleanup listener when component is unmounted
 			window.removeEventListener('scroll', handleScroll);
 		};
 	});
+
+	// Function to scroll back to top
+	function scrollToTop() {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}
 </script>
 
 <main>
+	<button on:click={scrollToTop} class:show={showBackToTop} class="back-to-top">↑</button>
+
 	<div class="searchSectionContainer">
 		<section class="search-section">
 			<div class="search-container">
@@ -161,8 +215,6 @@
 							Let's stand together, making mindful choices that echo our support for peace and
 							justice. Your choice has power – wield it with wisdom and compassion.
 						</p>
-
-						<!-- <a class="action-button" href="/about">How every effort counts ></a> -->
 					</div>
 				{/if}
 			</div>
@@ -217,6 +269,25 @@
 </main>
 
 <style>
+	.back-to-top {
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		padding: 10px 20px;
+		background-color: #333;
+		color: white;
+		border: none;
+		border-radius: 10px;
+		cursor: pointer;
+		display: none;
+		z-index: 1000;
+		font-size: 24px;
+	}
+
+	.back-to-top.show {
+		display: block;
+	}
+
 	:global(body) {
 		background-color: #1e1e1e !important;
 		color: var(--lightColor) !important;
@@ -470,6 +541,8 @@
 	:global(body) #searchInput:focus {
 		box-shadow: inset 8px 8px 8px -1px rgba(0, 0, 0, 0.4),
 			inset -8px -8px 8px -1px rgba(56, 56, 56, 0.4);
+
+		color: var(--lightColor);
 	}
 
 	:global(body.lightMode) #searchInput {
@@ -486,6 +559,8 @@
 	:global(body.lightMode) #searchInput:focus {
 		box-shadow: inset 10px 10px 10px -1px rgba(0, 0, 0, 0.1),
 			inset -10px -10px 10px -1px rgba(255, 255, 255, 0.3);
+
+		color: var(--darkColor);
 	}
 
 	:global(body) #searchInput::placeholder {
@@ -631,9 +706,14 @@
 		margin-left: 10px;
 	}
 
+	.brand-name {
+		font-size: 18px;
+	}
+
 	.company-name {
 		margin-bottom: 5px;
 		font-size: 14px;
+		opacity: 0.6;
 	}
 
 	@media (max-width: 1200px) {

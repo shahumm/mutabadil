@@ -1,123 +1,353 @@
 [
-  {
-    "food": {
-      "grains": {
-        "oats": [
-          {
-            "brand": "Fauji Barley",
-            "company": "Fauji Foods",
-            "image": "src/lib/products/barley.png"
-          },
-          {
-            "brand": "Fauji Wheat",
-            "company": "Fauji Foods",
-            "image": "src/lib/products/wheat.png"
-          },
-          {
-            "brand": "Oatsom",
-            "company": "Shan Foods",
-            "image": "src/lib/products/wheat.png"
-          }
-        ]
-      },
-      "dairy": {
-        "milk": [
-          {
-            "brand": "Nurpur",
-            "company": "Fauji Foods",
-            "image": "src/lib/products/nurpur.png"
-          },
-          {
-            "brand": "Olpers",
-            "company": "Engro Foods",
-            "image": "src/lib/products/olpers.png"
-          },
-          {
-            "brand": "Prema",
-            "company": "At-Tahur Limited",
-            "image": "src/lib/products/prema.png"
-          },
-          {
-            "brand": "Anhaar",
-            "company": "Sharif Group",
-            "image": "src/lib/products/prema.png"
-          },
-          {
-            "brand": "Day Fresh",
-            "company": "DairyLand",
-            "image": "src/lib/products/prema.png"
-          },
-          {
-            "brand": "Good Milk",
-            "company": "Shakarganj Food Products",
-            "image": "src/lib/products/prema.png"
-          },
-          {
-            "brand": "Adams Milk",
-            "company": "Adam's Milk Products",
-            "image": "src/lib/products/prema.png"
-          },
-          {
-            "brand": "Gourmet Milk",
-            "company": "Gourmet Foods",
-            "image": "src/lib/products/prema.png"
-          }
-        ]
-      }
-    },
-    "cleansers": {
-      "personal": {
-        "toothpaste": [
-          {
-            "brand": "Medicam",
-            "company": "Fauji Foods",
-            "image": "https://www.placehold.co/500x500"
-          },
-          {
-            "brand": "English",
-            "company": "Fauji Foods",
-            "image": "https://www.placehold.co/500x500"
-          }
-        ],
-        "shampoo": [
-          {
-            "brand": "Head and Shoulders",
-            "company": "Fauji Foods",
-            "image": "https://www.placehold.co/500x500"
-          },
-          {
-            "brand": "Clear",
-            "company": "Fauji Foods",
-            "image": "https://www.placehold.co/500x500"
-          }
-        ]
-      },
-      "soaps": {
-        "personal": [
-          {
-            "brand": "Dettol",
-            "company": "Fauji Foods",
-            "image": "https://www.placehold.co/500x500"
-          },
-          {
-            "brand": "Saeed Ghani",
-            "company": "Engro Foods",
-            "image": "https://www.placehold.co/500x500"
-          }
-        ],
-        "surf": [
-          {
-            "brand": "Ariel",
-            "company": "Fauji Foods",
-            "image": "https://www.placehold.co/500x500"
-          },
-          {
-            "brand": "Surf Axcel",
-            "company": "Engro Foods",
-            "image": "https://www.placehold.co/500x500"
-          }
-        ]
-      }
-    }
-  }
+	{
+		"food": {
+			"grains": {
+				"cereal": [
+					{
+						"brand": "Fauji Porridge",
+						"company": "Fauji Foods",
+						"image": "src/lib/products/barley.png"
+					},
+
+					{
+						"brand": "Oatsom",
+						"company": "Shan Foods",
+						"image": "src/lib/products/wheat.png"
+					},
+
+					{
+						"brand": "Frunchies Mingalz",
+						"company": "Dashi Foods",
+						"image": "src/lib/products/wheat.png"
+					}
+				],
+				"pasta": [],
+				"rice": []
+			},
+
+			"dairy": {
+				"milk": [
+					{
+						"brand": "Nurpur",
+						"company": "Fauji Foods",
+						"image": "src/lib/products/nurpur.png"
+					},
+					{
+						"brand": "Olpers",
+						"company": "Engro Foods",
+						"image": "src/lib/products/olpers.png"
+					},
+					{
+						"brand": "Prema",
+						"company": "At-Tahur Limited",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Anhaar",
+						"company": "Sharif Group",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Day Fresh",
+						"company": "DairyLand",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Good Milk",
+						"company": "Shakarganj Food Products",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Adams Milk",
+						"company": "Adam's Milk Foods",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Gourmet Milk",
+						"company": "Gourmet Foods",
+						"image": "src/lib/products/prema.png"
+					}
+				],
+
+				"cheese": [
+					{
+						"brand": "Nurpur Cheese",
+						"company": "Fauji Foods",
+						"image": "src/lib/products/nurpur.png"
+					},
+					{
+						"brand": "Prema Cheese",
+						"company": "Al-Tahur Limited",
+						"image": "src/lib/products/olpers.png"
+					},
+					{
+						"brand": "Olpers Cheese",
+						"company": "Engro Foods",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Adams Cheese",
+						"company": "Adams Milk Foods",
+						"image": "src/lib/products/prema.png"
+					}
+				],
+
+				"yogurt": [
+					{
+						"brand": "Adams Yogurt",
+						"company": "Amsons Milk Foods",
+						"image": "src/lib/products/nurpur.png"
+					},
+					{
+						"brand": "Prema Yogurt",
+						"company": "Al-Tahur Limited",
+						"image": "src/lib/products/olpers.png"
+					},
+					{
+						"brand": "Amsons Yogurt",
+						"company": "Adams Milk Foods",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Millac Yogurt",
+						"company": "Adams Milk Foods",
+						"image": "src/lib/products/prema.png"
+					}
+				],
+
+				"butter": [
+					{
+						"brand": "Millac Butter",
+						"company": "Amsons Milk Foods",
+						"image": "src/lib/products/nurpur.png"
+					},
+					{
+						"brand": "Nurpur Butter",
+						"company": "Fauji Foods",
+						"image": "src/lib/products/olpers.png"
+					},
+					{
+						"brand": "Prema Butter",
+						"company": "Al-Tahur Limited",
+						"image": "src/lib/products/prema.png"
+					}
+				]
+			},
+
+			"snacks": {
+				"chips": [
+					{
+						"brand": "Macho Nachos",
+						"company": "Simba Foods",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Noms Nachos",
+						"company": "Nutribel",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Hunter's",
+						"company": "Gourmet Foods",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Nimco's Potato Crisps",
+						"company": "NIMCO",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Nimco's Potato Crinkles",
+						"company": "NIMCO",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Pak Foods Ringli",
+						"company": "Pak Foods",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Pak Foods Pop & Co",
+						"company": "Pak Foods",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Super Crisp",
+						"company": "Triple-Em",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Super Crisp Catty Chins",
+						"company": "Triple-Em",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Super Crisp Twister",
+						"company": "Triple-Em",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Kolson Slanty",
+						"company": "Lotte Kolson",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Kolson Potato Sticks",
+						"company": "Lotte Kolson",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Kolson Snackers",
+						"company": "Lotte Kolson",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Kolson Cheese Balls",
+						"company": "Lotte Kolson",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Kolson Folds",
+						"company": "Lotte Kolson",
+						"image": "src/lib/products/prema.png"
+					}
+				],
+
+				"biscuits": [
+					{
+						"brand": "Nimco's Nimco",
+						"company": "NIMCO",
+						"image": "src/lib/products/nimko.png"
+					},
+					{
+						"brand": "Nimco's Nimco",
+						"company": "NIMCO",
+						"image": "src/lib/products/nimko.png"
+					}
+				],
+
+				"nuts & seeds": [
+					{
+						"brand": "Super Crisp Nimko",
+						"company": "Triple-Em",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Super Crisp Almonds",
+						"company": "Triple-Em",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Super Crisp Cashew Nuts",
+						"company": "Triple-Em",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Super Crisp Pistachio",
+						"company": "Triple-Em",
+						"image": "src/lib/products/prema.png"
+					},
+					{
+						"brand": "Go Royale Peanuts",
+						"company": "Mattoo Foods",
+						"image": "src/lib/products/nimko.png"
+					}
+				],
+
+				"savory mixes": [
+					{
+						"brand": "Nimco's Nimco",
+						"company": "NIMCO",
+						"image": "src/lib/products/nimko.png"
+					},
+					{
+						"brand": "Go Royale Nimko",
+						"company": "Mattoo Foods",
+						"image": "src/lib/products/nimko.png"
+					},
+					{
+						"brand": "Auk Foods Nimko",
+						"company": "Auk Foods",
+						"image": "src/lib/products/nimko.png"
+					}
+				]
+			},
+
+			"beverages": {
+				"soft drinks": [],
+				"juices": [],
+				"water": []
+			},
+			"condiments & sauces": {
+				"ketchup": [],
+				"mayonnaise": [],
+				"mustard": []
+			},
+			"frozen foods": {
+				"vegetables": [],
+				"meals": [],
+				"ice cream": []
+			},
+			"baking goods": {
+				"flour": [],
+				"sugar": [],
+				"baking mixes": []
+			}
+		},
+
+		"cleansers": {
+			"personal": {
+				"toothpaste": [
+					{
+						"brand": "Medicam",
+						"company": "Fauji Foods",
+						"image": "https://www.placehold.co/500x500"
+					},
+					{
+						"brand": "English",
+						"company": "Fauji Foods",
+						"image": "https://www.placehold.co/500x500"
+					}
+				],
+				"shampoo": [
+					{
+						"brand": "Head and Shoulders",
+						"company": "Fauji Foods",
+						"image": "https://www.placehold.co/500x500"
+					},
+					{
+						"brand": "Clear",
+						"company": "Fauji Foods",
+						"image": "https://www.placehold.co/500x500"
+					}
+				]
+			},
+			"soaps": {
+				"personal": [
+					{
+						"brand": "Dettol",
+						"company": "Fauji Foods",
+						"image": "https://www.placehold.co/500x500"
+					},
+					{
+						"brand": "Saeed Ghani",
+						"company": "Engro Foods",
+						"image": "https://www.placehold.co/500x500"
+					}
+				],
+				"surf": [
+					{
+						"brand": "Ariel",
+						"company": "Fauji Foods",
+						"image": "https://www.placehold.co/500x500"
+					},
+					{
+						"brand": "Surf Axcel",
+						"company": "Engro Foods",
+						"image": "https://www.placehold.co/500x500"
+					}
+				]
+			}
+		}
+	}
 ]
