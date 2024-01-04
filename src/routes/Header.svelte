@@ -53,7 +53,10 @@
 </script>
 
 <video id="backgroundVideo" autoplay loop muted playsinline preload="auto">
-	<source src="src/lib/video.mp4" type="video/mp4" />
+	<source
+		src="https://res.cloudinary.com/dw095oyal/video/upload/v1704347285/Products/video_1_pfomyy.mp4"
+		type="video/mp4"
+	/>
 </video>
 
 <header>

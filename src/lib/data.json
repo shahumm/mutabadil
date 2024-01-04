@@ -6,19 +6,19 @@
 					{
 						"brand": "Fauji Porridge",
 						"company": "Fauji Foods",
-						"image": "src/lib/products/barley.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/barley-removebg-preview_kwhgur.png"
 					},
 
 					{
 						"brand": "Oatsom",
 						"company": "Shan Foods",
-						"image": "src/lib/products/wheat.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/barley-removebg-preview_kwhgur.png"
 					},
 
 					{
 						"brand": "Frunchies Mingalz",
 						"company": "Dashi Foods",
-						"image": "src/lib/products/wheat.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/barley-removebg-preview_kwhgur.png"
 					}
 				],
 				"pasta": [],
@@ -30,42 +30,42 @@
 					{
 						"brand": "Nurpur",
 						"company": "Fauji Foods",
-						"image": "src/lib/products/nurpur.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/nurpur-removebg-preview_tgmmsg.png"
 					},
 					{
 						"brand": "Olpers",
 						"company": "Engro Foods",
-						"image": "src/lib/products/olpers.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/nurpur-removebg-preview_tgmmsg.png"
 					},
 					{
 						"brand": "Prema",
 						"company": "At-Tahur Limited",
-						"image": "src/lib/products/prema.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/nurpur-removebg-preview_tgmmsg.png"
 					},
 					{
 						"brand": "Anhaar",
 						"company": "Sharif Group",
-						"image": "src/lib/products/prema.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/nurpur-removebg-preview_tgmmsg.png"
 					},
 					{
 						"brand": "Day Fresh",
 						"company": "DairyLand",
-						"image": "src/lib/products/prema.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/nurpur-removebg-preview_tgmmsg.png"
 					},
 					{
 						"brand": "Good Milk",
 						"company": "Shakarganj Food Products",
-						"image": "src/lib/products/prema.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/nurpur-removebg-preview_tgmmsg.png"
 					},
 					{
 						"brand": "Adams Milk",
 						"company": "Adam's Milk Foods",
-						"image": "src/lib/products/prema.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/nurpur-removebg-preview_tgmmsg.png"
 					},
 					{
 						"brand": "Gourmet Milk",
 						"company": "Gourmet Foods",
-						"image": "src/lib/products/prema.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/nurpur-removebg-preview_tgmmsg.png"
 					}
 				],
 
@@ -73,22 +73,22 @@
 					{
 						"brand": "Nurpur Cheese",
 						"company": "Fauji Foods",
-						"image": "src/lib/products/nurpur.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Prema Cheese",
 						"company": "Al-Tahur Limited",
-						"image": "src/lib/products/olpers.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Olpers Cheese",
 						"company": "Engro Foods",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Adams Cheese",
 						"company": "Adams Milk Foods",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					}
 				],
 
@@ -96,22 +96,22 @@
 					{
 						"brand": "Adams Yogurt",
 						"company": "Amsons Milk Foods",
-						"image": "src/lib/products/nurpur.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Prema Yogurt",
 						"company": "Al-Tahur Limited",
-						"image": "src/lib/products/olpers.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Amsons Yogurt",
 						"company": "Adams Milk Foods",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Millac Yogurt",
 						"company": "Adams Milk Foods",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					}
 				],
 
@@ -119,17 +119,17 @@
 					{
 						"brand": "Millac Butter",
 						"company": "Amsons Milk Foods",
-						"image": "src/lib/products/nurpur.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Nurpur Butter",
 						"company": "Fauji Foods",
-						"image": "src/lib/products/olpers.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Prema Butter",
 						"company": "Al-Tahur Limited",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					}
 				]
 			},
@@ -139,90 +139,78 @@
 					{
 						"brand": "Macho Nachos",
 						"company": "Simba Foods",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Noms Nachos",
 						"company": "Nutribel",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Hunter's",
 						"company": "Gourmet Foods",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
-						"brand": "Nimco's Potato Crisps",
+						"brand": "Nimco's Crisps",
 						"company": "NIMCO",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
-						"brand": "Nimco's Potato Crinkles",
-						"company": "NIMCO",
-						"image": "src/lib/products/prema.png"
-					},
-					{
-						"brand": "Pak Foods Ringli",
+						"brand": "Pak Foods Crisps",
 						"company": "Pak Foods",
-						"image": "src/lib/products/prema.png"
-					},
-					{
-						"brand": "Pak Foods Pop & Co",
-						"company": "Pak Foods",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Super Crisp",
 						"company": "Triple-Em",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
-						"brand": "Super Crisp Catty Chins",
-						"company": "Triple-Em",
-						"image": "src/lib/products/prema.png"
-					},
-					{
-						"brand": "Super Crisp Twister",
-						"company": "Triple-Em",
-						"image": "src/lib/products/prema.png"
-					},
-					{
-						"brand": "Kolson Slanty",
+						"brand": "Kolson Crisps",
 						"company": "Lotte Kolson",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
-						"brand": "Kolson Potato Sticks",
-						"company": "Lotte Kolson",
-						"image": "src/lib/products/prema.png"
+						"brand": "Pop & Co",
+						"company": "Pak Foods",
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
-						"brand": "Kolson Snackers",
-						"company": "Lotte Kolson",
-						"image": "src/lib/products/prema.png"
-					},
-					{
-						"brand": "Kolson Cheese Balls",
-						"company": "Lotte Kolson",
-						"image": "src/lib/products/prema.png"
-					},
-					{
-						"brand": "Kolson Folds",
-						"company": "Lotte Kolson",
-						"image": "src/lib/products/prema.png"
+						"brand": "SnackCity",
+						"company": "Ismail Industries Limited",
+						"image": "https://www.placehold.co/500x500"
 					}
 				],
 
 				"biscuits": [
 					{
-						"brand": "Nimco's Nimco",
-						"company": "NIMCO",
-						"image": "src/lib/products/nimko.png"
+						"brand": "Peek Freans Biscuits",
+						"company": "English Biscuit Manufacturers",
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
-						"brand": "Nimco's Nimco",
-						"company": "NIMCO",
-						"image": "src/lib/products/nimko.png"
+						"brand": "Biconni Biscuits",
+						"company": "Ismail Industries Limited",
+						"image": "https://www.placehold.co/500x500"
+					},
+					{
+						"brand": "Mayfair Biscuits",
+						"company": "Asian Food Industries (AFI)",
+						"image": "https://www.placehold.co/500x500"
+					}
+				],
+
+				"candies": [
+					{
+						"brand": "CandyLand",
+						"company": "Ismail Industries Limited",
+						"image": "https://www.placehold.co/500x500"
+					},
+					{
+						"brand": "Biconni Biscuits",
+						"company": "Ismail Industries Limited",
+						"image": "https://www.placehold.co/500x500"
 					}
 				],
 
@@ -230,27 +218,27 @@
 					{
 						"brand": "Super Crisp Nimko",
 						"company": "Triple-Em",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Super Crisp Almonds",
 						"company": "Triple-Em",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Super Crisp Cashew Nuts",
 						"company": "Triple-Em",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Super Crisp Pistachio",
 						"company": "Triple-Em",
-						"image": "src/lib/products/prema.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Go Royale Peanuts",
 						"company": "Mattoo Foods",
-						"image": "src/lib/products/nimko.png"
+						"image": "https://www.placehold.co/500x500"
 					}
 				],
 
@@ -258,17 +246,17 @@
 					{
 						"brand": "Nimco's Nimco",
 						"company": "NIMCO",
-						"image": "src/lib/products/nimko.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Go Royale Nimko",
 						"company": "Mattoo Foods",
-						"image": "src/lib/products/nimko.png"
+						"image": "https://www.placehold.co/500x500"
 					},
 					{
 						"brand": "Auk Foods Nimko",
 						"company": "Auk Foods",
-						"image": "src/lib/products/nimko.png"
+						"image": "https://www.placehold.co/500x500"
 					}
 				]
 			},

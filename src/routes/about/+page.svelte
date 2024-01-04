@@ -22,7 +22,7 @@
 
 	<img
 		class="tiltMain"
-		src={'src/lib/bird.png'}
+		src={'https://res.cloudinary.com/dw095oyal/image/upload/v1704266445/Products/bird_cifyl1.webp'}
 		alt={'Bird flying with water in its beak'}
 		on:load={handleImageLoad}
 		on:error={handleImageError}

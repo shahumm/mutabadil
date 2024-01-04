@@ -1,6 +1,15 @@
 <script>
 	import dataTree from '$lib/data.json';
 	import { slide } from 'svelte/transition';
+	import Overlay from './Overlay.svelte';
+
+	let isOverlayOpen = false;
+	let overlayContent = '';
+
+	function openOverlay(content) {
+		overlayContent = content;
+		isOverlayOpen = true;
+	}
 
 	let searchQuery = '';
 	let filteredData = filterData(dataTree[0]);
@@ -248,7 +257,10 @@
 										<h5>> {title}</h5>
 										<div class="cards-container">
 											{#each items as item, index}
-												<div class={isAtTop ? 'card cardTopScroll' : 'card cardScrolled'}>
+												<div
+													class={isAtTop ? 'card cardTopScroll' : 'card cardScrolled'}
+													on:click={() => openOverlay(item)}
+												>
 													<img class="product-image" src={item.image} alt="{item.brand} product" />
 													<p class="brand-name">{item.brand}</p>
 													<p class="company-name">{item.company}</p>
@@ -266,9 +278,15 @@
 			{/if}
 		</div>
 	</section>
+	<Overlay bind:isOpen={isOverlayOpen} content={overlayContent} />
 </main>
 
 <style>
+	.card:hover .product-image {
+		transform: scale(0.95);
+		transition: 0.25s ease-in-out;
+	}
+
 	.back-to-top {
 		position: fixed;
 		bottom: 20px;
@@ -691,6 +709,8 @@
 		object-fit: contain;
 		position: absolute;
 		top: 30px;
+
+		transition: 0.25s ease;
 	}
 
 	.card:before {
@@ -704,6 +724,8 @@
 	.company-name {
 		align-self: flex-start;
 		margin-left: 10px;
+
+		transition: 0.25s ease;
 	}
 
 	.brand-name {
