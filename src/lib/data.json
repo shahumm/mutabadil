@@ -12,13 +12,13 @@
 					{
 						"brand": "Oatsom",
 						"company": "Shan Foods",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/barley-removebg-preview_kwhgur.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704560545/Products/oatsom_aldkpz.png"
 					},
 
 					{
 						"brand": "Frunchies Mingalz",
 						"company": "Dashi Foods",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/barley-removebg-preview_kwhgur.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704561327/Products/Screenshot_2024-01-06_at_22.14.44-removebg-preview_j55b84.png"
 					}
 				],
 				"pasta": [],
@@ -40,17 +40,17 @@
 					{
 						"brand": "Prema",
 						"company": "At-Tahur Limited",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/nurpur-removebg-preview_tgmmsg.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704561076/Products/premamilk-removebg-preview_fapcxd.png"
 					},
 					{
 						"brand": "Anhaar",
 						"company": "Sharif Group",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/nurpur-removebg-preview_tgmmsg.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704560872/Products/anhaar.png"
 					},
 					{
 						"brand": "Day Fresh",
 						"company": "DairyLand",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/nurpur-removebg-preview_tgmmsg.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704560990/Products/dayfresh_xdamhf.png"
 					},
 					{
 						"brand": "Good Milk",
@@ -60,7 +60,7 @@
 					{
 						"brand": "Adams Milk",
 						"company": "Adam's Milk Foods",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/nurpur-removebg-preview_tgmmsg.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704560674/Products/Screenshot_2024-01-06_at_22.03.26-removebg-preview_lpzzyt.png"
 					},
 					{
 						"brand": "Gourmet Milk",

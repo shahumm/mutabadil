@@ -4,10 +4,13 @@
 	import Overlay from './Overlay.svelte';
 
 	let isOverlayOpen = false;
-	let overlayContent = '';
 
-	function openOverlay(content) {
-		overlayContent = content;
+	let overlayContent = '';
+	let overlayTitle = '';
+
+	function openOverlay(item) {
+		overlayContent = item.description;
+		overlayTitle = item.company;
 		isOverlayOpen = true;
 	}
 
@@ -101,14 +104,13 @@
 
 	let isAccordionOpen = false;
 
-	let accordionElement; // Reference to the accordion content DOM element
-	let accordionHeight = '0px'; // Initialize accordion height
+	let accordionElement;
+	let accordionHeight = '0px';
 
 	function toggleAccordion() {
 		isAccordionOpen = !isAccordionOpen;
 
 		if (isAccordionOpen) {
-			// Ensure the element is rendered in the DOM before measuring its height
 			setTimeout(() => {
 				accordionHeight = `${accordionElement.scrollHeight}px`;
 			}, 0);
@@ -163,28 +165,22 @@
 		filteredData = sortBrands(filterData(dataTree[0]));
 	}
 
-	// Scroll to Top
-	let showBackToTop = false; // State variable for back to top button visibility
+	let showBackToTop = false;
 
 	onMount(() => {
 		function handleScroll() {
-			// Show button when scrolled 100px from the top
 			showBackToTop = window.pageYOffset > 100;
 		}
 
-		// Add scroll event listener
 		window.addEventListener('scroll', handleScroll);
 
-		// Initial check
 		handleScroll();
 
 		return () => {
-			// Cleanup listener when component is unmounted
 			window.removeEventListener('scroll', handleScroll);
 		};
 	});
 
-	// Function to scroll back to top
 	function scrollToTop() {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}
@@ -278,7 +274,7 @@
 			{/if}
 		</div>
 	</section>
-	<Overlay bind:isOpen={isOverlayOpen} content={overlayContent} />
+	<Overlay bind:isOpen={isOverlayOpen} content={overlayContent} title={overlayTitle} />
 </main>
 
 <style>
@@ -420,14 +416,6 @@
 		padding-bottom: 20px;
 	}
 
-	/* body {
-		margin: 0;
-		padding: 0;
-		display: flex;
-		flex-direction: column;
-		height: 100vh;
-	} */
-
 	.searchSectionContainer {
 		width: 100%;
 		display: grid;
@@ -467,7 +455,7 @@
 	}
 
 	.content-section .searchBar {
-		width: 500px;
+		width: 100%;
 		padding: 50px 0px;
 		z-index: 10;
 	}
@@ -476,9 +464,9 @@
 		position: relative;
 		width: 100%;
 		max-width: 100%;
-		padding: 20px;
 		z-index: 10;
 	}
+
 	.content-section-open .accordion-content {
 		max-height: 500px;
 		opacity: 1;
@@ -487,6 +475,7 @@
 	.content-section-open {
 		transform: translateY(100%);
 	}
+
 	.searchBar {
 		position: relative;
 		display: flex;
@@ -750,9 +739,19 @@
 		}
 	}
 
+	/* Mobile */
 	@media (max-width: 600px) {
 		.cards-container {
 			grid-template-columns: 1fr;
+		}
+
+		.searchBar::before,
+		.searchBar::after {
+			display: none;
+		}
+
+		.content-section .searchBar {
+			width: 70%;
 		}
 	}
 </style>

@@ -1,7 +1,16 @@
 <script>
 	import { slide } from 'svelte/transition';
+	import companyTree from '$lib/company.json';
 	export let isOpen;
-	export let content;
+	export let title;
+
+	let owner = '';
+	let description = '';
+
+	$: if (companyTree[title]) {
+		owner = companyTree[title].owner;
+		description = companyTree[title].description;
+	}
 
 	function close() {
 		isOpen = false;
@@ -11,15 +20,13 @@
 {#if isOpen}
 	<div class="overlay" on:click={close} transition:slide={{ delay: 0, duration: 250, axis: 'y' }}>
 		<div class="overlay-content">
-			<h2>Fauji Foods</h2>
-			<h3>Owned by Fauji Foundation</h3>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-				labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-				laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-				voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-				cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
+			<h2>{title}</h2>
+			{#if companyTree[title]}
+				<h3>Owned by {owner}</h3>
+				<p>{description}</p>
+			{:else}
+				<p>Company information not available.</p>
+			{/if}
 		</div>
 	</div>
 {/if}
