@@ -62,7 +62,9 @@
 <header>
 	<a data-sveltekit-prefetch data-sveltekit-noscroll href="/">
 		<div class="logo">
-			<div class="white-circle" />
+			<div class="white-circle">
+				<span class="logo-text">mutabadil</span>
+			</div>
 		</div>
 	</a>
 
@@ -99,14 +101,22 @@
 	}
 
 	.white-circle {
-		width: 50px;
-		height: 50px;
-		background-color: white;
-		border-radius: 50%;
 		position: absolute;
-		left: 50%;
+		width: 200px;
+		height: 70px;
+		background-color: transparent;
+		left: 200px;
 		transform: translate(-50%, -50%);
 		z-index: 1;
+
+		display: grid;
+		place-items: center left;
+	}
+
+	.logo-text {
+		font-size: 23px;
+		color: white;
+		font-weight: 500;
 	}
 
 	button {
@@ -133,8 +143,8 @@
 		padding-bottom: 10px;
 
 		position: absolute;
-		top: 55px;
-		left: 80px;
+		top: 53px;
+		right: 180px;
 		cursor: pointer;
 		transition: 0.3s ease;
 		transform: scale(1.7);
@@ -148,19 +158,14 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 100px;
+		height: 120px;
 		margin-top: 10px;
-		margin-bottom: 30px;
 	}
 
-	@media (max-width: 1000px) {
-		button {
-			display: block;
-		}
-
+	@media (max-width: 450px) {
 		button {
 			top: 38px;
-			right: 15px;
+			right: 5px;
 			transform: scale(0.67);
 		}
 
@@ -168,17 +173,30 @@
 			font-weight: 400 !important;
 		}
 
-		.logo {
-			transform: scale(0.75) !important;
+		header {
+			justify-content: flex-start;
+			padding-left: 20px;
 		}
 
-		header {
-			margin-bottom: 10px;
+		.logo {
+			transform: scale(0.75);
+			margin-bottom: 18px;
+			margin-left: 10px;
+		}
+
+		.logo-text {
+			font-weight: 500 !important;
+		}
+
+		.white-circle {
+			height: 100%;
+			left: 0;
+			transform: translate(0, -50%);
 		}
 
 		.mode {
-			top: 55px;
-			left: 30px;
+			top: 53px;
+			right: 75px;
 			transform: scale(1.6);
 		}
 	}

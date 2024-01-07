@@ -1,10 +1,55 @@
 <script>
 	import dataTree from '$lib/data.json';
-	import { slide } from 'svelte/transition';
 	import Overlay from './Overlay.svelte';
+	import { onMount } from 'svelte';
+	import { gsap } from 'gsap';
 
+	let switchToLocal;
+	let wherePossible;
+	let searchBar;
+
+	onMount(() => {
+		gsap.from([switchToLocal, wherePossible, searchBar, '.content-container'], {
+			y: 80,
+			opacity: 0,
+			duration: 0.4,
+			stagger: 0.2
+		});
+	});
+
+	// Placeholder Animation
+	let placeholders = ['Milk...', 'Dairy...', 'Soaps...', 'Olpers...'];
+	let currentPlaceholderIndex = 0;
+	let cyclePlaceholder;
+	let placeholderText = placeholders[0];
+
+	function startCyclingPlaceholders() {
+		cyclePlaceholder = setInterval(() => {
+			currentPlaceholderIndex = (currentPlaceholderIndex + 1) % placeholders.length;
+			placeholderText = placeholders[currentPlaceholderIndex];
+		}, 1000);
+	}
+
+	onMount(() => {
+		startCyclingPlaceholders();
+	});
+
+	function handleFocus() {
+		clearInterval(cyclePlaceholder);
+		placeholderText = '';
+	}
+
+	function handleBlur() {
+		if (searchQuery.trim() === '') {
+			currentPlaceholderIndex = (currentPlaceholderIndex + 1) % placeholders.length;
+			placeholderText = placeholders[currentPlaceholderIndex];
+
+			startCyclingPlaceholders();
+		}
+	}
+
+	// Overlay Functions
 	let isOverlayOpen = false;
-
 	let overlayContent = '';
 	let overlayTitle = '';
 
@@ -14,6 +59,7 @@
 		isOverlayOpen = true;
 	}
 
+	// Tree Sort
 	let searchQuery = '';
 	let filteredData = filterData(dataTree[0]);
 
@@ -41,12 +87,14 @@
 		}
 	}
 
+	// Reactivity
 	$: if (searchQuery) {
 		searchData();
 	} else {
 		filteredData = filterData(dataTree[0]);
 	}
 
+	// Tree Search
 	function searchData() {
 		filteredData = filterData(dataTree[0]);
 
@@ -102,25 +150,6 @@
 		}
 	}
 
-	let isAccordionOpen = false;
-
-	let accordionElement;
-	let accordionHeight = '0px';
-
-	function toggleAccordion() {
-		isAccordionOpen = !isAccordionOpen;
-
-		if (isAccordionOpen) {
-			setTimeout(() => {
-				accordionHeight = `${accordionElement.scrollHeight}px`;
-			}, 0);
-		} else {
-			accordionHeight = '0px';
-		}
-	}
-
-	import { onMount } from 'svelte';
-
 	let isAtTop = true;
 
 	onMount(() => {
@@ -155,10 +184,6 @@
 		return sortedData;
 	}
 
-	function handleSort() {
-		filteredData = sortBrands(filteredData);
-	}
-
 	$: if (searchQuery) {
 		searchData();
 	} else {
@@ -189,58 +214,32 @@
 <main>
 	<button on:click={scrollToTop} class:show={showBackToTop} class="back-to-top">↑</button>
 
-	<div class="searchSectionContainer">
-		<section class="search-section">
-			<div class="search-container">
-				<h2>Switch to local, where possible.</h2>
-				<button class="accordion-toggle" on:click={toggleAccordion}>
-					{isAccordionOpen ? '- Hide Description' : '+ Show Description'}
-				</button>
-
-				{#if isAccordionOpen}
-					<div
-						bind:this={accordionElement}
-						class="accordion-content {isAccordionOpen ? 'active' : ''}"
-						transition:slide
+	<div class="hero-section-container">
+		<section class="hero-section">
+			<div class="hero-container">
+				<div class="hero-container">
+					<h2 bind:this={switchToLocal} class={isAtTop ? 'h2 addStroke' : ''}>Switch to local,</h2>
+					<span bind:this={wherePossible} class={isAtTop ? 'span addStroke' : ''}>
+						where possible.</span
 					>
-						<p>
-							Choosing to boycott common products is a powerful stand for justice. Every small act
-							matters in our global solidarity with Palestine.
-						</p>
-						<p>
-							While not every item can be replaced locally, each conscious choice to prefer local
-							alternatives over international brands is a step towards change.
-						</p>
-						<p>
-							Our collective actions, seemingly small, can lead to significant impact. With every
-							meal or product we switch, we contribute to a larger movement that values human rights
-							and dignity.
-						</p>
-						<p>
-							Let's stand together, making mindful choices that echo our support for peace and
-							justice. Your choice has power – wield it with wisdom and compassion.
-						</p>
-					</div>
-				{/if}
+				</div>
 			</div>
 		</section>
 	</div>
 
-	<section
-		class="content-section"
-		style="transform: translateY({isAccordionOpen ? accordionHeight : '0px'})"
-	>
-		<div class="searchBar">
-			<input
-				type="text"
-				id="searchInput"
-				class="search-bar {isAtTop ? 'searchTopScroll' : 'searchInputScrolled'}"
-				bind:value={searchQuery}
-				placeholder="Find alternatives..."
-			/>
-		</div>
-
+	<section class="content-section">
 		<div class="content-container">
+			<div bind:this={searchBar} class="search-container">
+				<input
+					type="text"
+					id="searchInput"
+					class="search-bar {isAtTop ? 'searchTopScroll' : 'searchInputScrolled'}"
+					bind:value={searchQuery}
+					placeholder={placeholderText}
+					on:focus={handleFocus}
+					on:blur={handleBlur}
+				/>
+			</div>
 			{#if filteredData && Object.keys(filteredData).length > 0}
 				{#each Object.entries(filteredData) as [heading, subheadings]}
 					<div>
@@ -250,14 +249,19 @@
 								<h4>{subheading}</h4>
 								{#each Object.entries(titles) as [title, items]}
 									<div>
-										<h5>> {title}</h5>
+										<h5>{title}</h5>
 										<div class="cards-container">
 											{#each items as item, index}
 												<div
 													class={isAtTop ? 'card cardTopScroll' : 'card cardScrolled'}
 													on:click={() => openOverlay(item)}
 												>
-													<img class="product-image" src={item.image} alt="{item.brand} product" />
+													<img
+														class="product-image"
+														src={item.image}
+														alt="{item.brand} product"
+														loading="lazy"
+													/>
 													<p class="brand-name">{item.brand}</p>
 													<p class="company-name">{item.company}</p>
 												</div>
@@ -278,6 +282,29 @@
 </main>
 
 <style>
+	:global(body) .addStroke {
+		-webkit-text-fill-color: transparent;
+		-webkit-text-stroke-width: 1px;
+	}
+
+	.hero-container h2 {
+		font-weight: 600;
+		font-size: 45px;
+		color: var(--lightColor);
+		line-height: 1;
+	}
+
+	.hero-container span {
+		font-weight: 300;
+		font-size: 45px;
+		color: var(--lightColor);
+	}
+
+	:global(body.lightMode) .hero-container h2,
+	:global(body.lightMode) .hero-container span {
+		color: var(--darkColor);
+	}
+
 	.card:hover .product-image {
 		transform: scale(0.95);
 		transition: 0.25s ease-in-out;
@@ -338,28 +365,6 @@
 		outline: none; /* Ensures no outline */
 	}
 
-	.accordion-toggle {
-		background-color: #f2f2f2;
-		border-radius: 15px;
-		border: 1px solid #d1d1d1;
-		padding: 10px 20px;
-		font-size: 16px;
-		color: #333;
-		cursor: pointer;
-		outline: none;
-		z-index: 0;
-	}
-
-	.accordion-content p {
-		margin-bottom: 15px;
-		line-height: 1.9;
-		font-size: 16px;
-	}
-
-	.accordion-content p:last-child {
-		margin-bottom: 0;
-	}
-
 	.content-section {
 		overflow-y: auto;
 		display: grid;
@@ -372,51 +377,28 @@
 		text-transform: capitalize;
 	}
 
-	:global(body) .accordion-content {
-		position: absolute;
-		max-width: 97%;
-		box-sizing: border-box;
-		overflow: hidden;
-		background-color: var(--darkColor);
-		color: var(--lightColor);
-
-		border-radius: 15px;
-		margin-top: 10px;
-		padding: 20px;
-		font-size: 16px;
-
-		display: none;
-	}
-
-	:global(body.lightMode) .accordion-content {
-		background-color: var(--lightColor);
-		color: var(--darkColor);
-	}
-
-	.accordion-content.active {
-		display: block;
-		width: 100%;
-	}
-
 	.content-container h3 {
 		font-size: 28px;
 		font-weight: 600;
 		padding-bottom: 5px;
+		z-index: 999;
 	}
 
 	.content-container h4 {
-		font-size: 21px;
-		font-weight: 500;
+		font-size: 22px;
+		font-weight: 400;
 		padding-bottom: 5px;
+		z-index: 999;
 	}
 
 	.content-container h5 {
-		font-size: 16px;
-		font-weight: 500;
+		font-size: 18px;
+		font-weight: 300;
 		padding-bottom: 20px;
+		z-index: 999;
 	}
 
-	.searchSectionContainer {
+	.hero-section-container {
 		width: 100%;
 		display: grid;
 		place-items: center;
@@ -424,7 +406,7 @@
 		transition: 0.3s ease;
 	}
 
-	:global(body.lightMode) .searchSectionContainer {
+	:global(body.lightMode) .hero-section-container {
 		background-color: transparent !important;
 	}
 
@@ -432,18 +414,11 @@
 		background-color: transparent !important;
 	}
 
-	.search-section {
+	.hero-section {
 		display: flex;
 		align-items: center;
 		flex-direction: flex-start;
 		height: 30vh;
-		width: 63%;
-	}
-
-	.search-container h2 {
-		padding: 20px 0px;
-		font-weight: 600;
-		font-size: 30px;
 	}
 
 	.content-section {
@@ -454,29 +429,22 @@
 		transition: transform 0.3s ease;
 	}
 
-	.content-section .searchBar {
+	.content-section .search-container {
+		display: grid;
+		place-items: center;
 		width: 100%;
-		padding: 50px 0px;
+		padding-bottom: 150px;
 		z-index: 10;
 	}
 
-	.search-container {
+	.hero-container {
 		position: relative;
 		width: 100%;
 		max-width: 100%;
 		z-index: 10;
 	}
 
-	.content-section-open .accordion-content {
-		max-height: 500px;
-		opacity: 1;
-	}
-
-	.content-section-open {
-		transform: translateY(100%);
-	}
-
-	.searchBar {
+	.search-container {
 		position: relative;
 		display: flex;
 		justify-content: center;
@@ -488,54 +456,51 @@
 		font-size: 16px;
 	}
 
-	:global(body) .searchBar::before {
+	:global(body) .search-container::before {
 		content: '';
 		position: absolute;
-		top: 50%;
-		width: 300px;
+		top: 15%;
+		width: 350px;
 		height: 1.5px;
 		background: var(--lightColor);
 		transform: translateY(-50%);
 	}
 
-	:global(body.lightMode) .searchBar::before {
+	:global(body.lightMode) .search-container::before {
 		background: var(--darkColor);
 	}
 
-	:global(body) .searchBar::after {
+	:global(body) .search-container::after {
 		content: '';
 		position: absolute;
-		top: 50%;
-		width: 300px;
+		top: 15%;
+		width: 350px;
 		height: 1.5px;
 		background: var(--lightColor);
 		transform: translateY(-50%);
 	}
 
-	:global(body.lightMode) .searchBar::after {
+	:global(body.lightMode) .search-container::after {
 		background: var(--darkColor);
 	}
 
-	.searchBar::before {
+	.search-container::before {
 		left: 0;
-		margin-left: -330px;
 	}
 
-	.searchBar::after {
+	.search-container::after {
 		right: 0;
-		margin-right: -330px;
 	}
 
 	.content-container {
-		width: 80%;
-		max-width: 1200px;
+		width: 60%;
 		margin: auto;
 		padding: 20px;
 	}
 
 	:global(body) #searchInput {
 		width: 100%;
-		padding: 15px;
+		padding: 20px;
 
 		border-radius: 15px;
 		border: none;
@@ -727,31 +692,26 @@
 		opacity: 0.6;
 	}
 
-	@media (max-width: 1200px) {
-		.cards-container {
-			grid-template-columns: repeat(3, 1fr);
-		}
-	}
-
-	@media (max-width: 900px) {
-		.cards-container {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-
-	/* Mobile */
-	@media (max-width: 600px) {
+	@media (max-width: 450px) {
 		.cards-container {
 			grid-template-columns: 1fr;
 		}
 
-		.searchBar::before,
-		.searchBar::after {
+		.search-container::before,
+		.search-container::after {
 			display: none;
 		}
 
-		.content-section .searchBar {
-			width: 70%;
+		.hero-container {
+			transform: scale(0.9);
+		}
+
+		.content-container {
+			width: 75%;
+		}
+
+		.content-section .search-container {
+			padding-bottom: 110px;
 		}
 	}
 </style>
