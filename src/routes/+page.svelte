@@ -460,7 +460,7 @@
 		content: '';
 		position: absolute;
 		top: 15%;
-		width: 350px;
+		width: 250px;
 		height: 1.5px;
 		background: var(--lightColor);
 		transform: translateY(-50%);
@@ -474,7 +474,7 @@
 		content: '';
 		position: absolute;
 		top: 15%;
-		width: 350px;
+		width: 250px;
 		height: 1.5px;
 		background: var(--lightColor);
 		transform: translateY(-50%);
