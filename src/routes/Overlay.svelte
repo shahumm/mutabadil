@@ -39,7 +39,7 @@
 		width: 100%;
 		height: 100%;
 		background-color: rgb(16, 16, 16);
-		z-index: 999;
+		z-index: 9999;
 
 		display: flex;
 		align-items: center;
@@ -88,7 +88,7 @@
 
 	@media (max-width: 450px) {
 		.overlay-content {
-			transform: scale(0.85);
+			transform: scale(0.8);
 		}
 	}
 </style>

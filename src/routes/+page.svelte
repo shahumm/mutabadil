@@ -878,7 +878,6 @@
 		}
 
 		.toggle-container {
-			position: fixed;
 			top: 20px;
 			right: 20px;
 			transform: none;
