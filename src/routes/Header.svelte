@@ -203,6 +203,7 @@
 			top: 53px;
 			right: 75px;
 			transform: scale(1.6);
+			z-index: 999;
 		}
 	}
 </style>
