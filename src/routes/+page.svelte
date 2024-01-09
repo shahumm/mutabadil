@@ -869,7 +869,7 @@
 		.toggle-container.top {
 			right: 50%;
 			top: 0px;
-			bottom: 125px;
+			bottom: 130px;
 			transform: translateX(50%);
 			rotate: 0deg;
 		}
