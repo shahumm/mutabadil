@@ -22,7 +22,7 @@
 		<div class="overlay-content">
 			<h2>{title}</h2>
 			{#if companyTree[title]}
-				<h3>Owned by {owner}</h3>
+				<h3>> {owner}</h3>
 				<p>{description}</p>
 			{:else}
 				<p>Company information not available.</p>

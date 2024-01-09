@@ -217,25 +217,25 @@
 </script>
 
 <main>
-	<!-- <button on:click={scrollToTop} class:show={showBackToTop} class="back-to-top">↑</button> -->
+	<button on:click={scrollToTop} class:show={showBackToTop} class="back-to-top"> <p>></p></button>
+
+	<div class="toggle-container" class:top={isAtTop} data-sveltekit-preload-data="hover">
+		{#if isAtTop}
+			<span class="label support">Support</span>
+		{/if}
+		<label class="switch">
+			<input type="checkbox" bind:checked={useBoycottData} />
+			<span class="slider round" />
+		</label>
+		{#if isAtTop}
+			<span class="label boycott">Boycott</span>
+		{/if}
+	</div>
 
 	<div class="hero-section-container">
 		<section class="hero-section">
 			<div class="hero-container">
 				<div class="hero-container">
-					<div class="toggle-container" class:top={isAtTop} data-sveltekit-preload-data="hover">
-						{#if isAtTop}
-							<span class="label support">Support</span>
-						{/if}
-						<label class="switch">
-							<input type="checkbox" bind:checked={useBoycottData} />
-							<span class="slider round" />
-						</label>
-						{#if isAtTop}
-							<span class="label boycott">Boycott</span>
-						{/if}
-					</div>
-
 					<h2 bind:this={switchToLocal} class={isAtTop ? 'h2 addStroke' : ''}>Switch to local,</h2>
 					<span bind:this={wherePossible} class={isAtTop ? 'span addStroke' : ''}>
 						where possible.</span
@@ -340,8 +340,8 @@
 		justify-content: center;
 		gap: 10px;
 		position: fixed;
-		right: 0px;
-		bottom: 20px;
+		right: -4px;
+		bottom: 80px;
 		transition: transform 0.3s ease-in-out;
 	}
 
@@ -355,32 +355,9 @@
 	.toggle-container.top {
 		position: absolute;
 		right: 50%;
-		bottom: 230px;
+		top: -840px;
 		transform: translateX(50%);
 	}
-
-	/* .back-to-top {
-		bottom: 80px;
-	}
-
-	.back-to-top.show {
-		display: block;
-	}
-
-	.back-to-top {
-		padding: 10px 20px;
-		background-color: #333;
-		color: white;
-		border: none;
-		border-radius: 10px;
-		cursor: pointer;
-		display: none;
-		font-size: 24px;
-	}
-
-	.back-to-top.show {
-		display: block;
-	} */
 
 	.switch {
 		position: relative;
@@ -388,6 +365,13 @@
 		width: 120px;
 		height: 34px;
 		margin: 10px;
+	}
+
+	.back-to-top p {
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 0;
+		rotate: -90deg;
 	}
 
 	.switch input {
@@ -466,17 +450,21 @@
 
 	.back-to-top {
 		position: fixed;
+		width: 70px;
+		height: 34px;
+		margin: 10px;
+		border-radius: 100px;
+
 		bottom: 20px;
 		right: 20px;
-		padding: 10px 20px;
+
 		background-color: #333;
 		color: white;
 		border: none;
-		border-radius: 10px;
 		cursor: pointer;
 		display: none;
 		z-index: 1000;
-		font-size: 24px;
+		font-size: 18px;
 	}
 
 	.back-to-top.show {
@@ -723,6 +711,7 @@
 		opacity: 1;
 		z-index: 10;
 
+		cursor: pointer;
 		transition: 0.5s ease;
 	}
 
@@ -877,16 +866,32 @@
 			width: 90%;
 		}
 
-		.toggle-container {
-			top: 20px;
-			right: 20px;
-			transform: none;
+		.toggle-container.top {
+			right: 50%;
+			top: -85px;
+			transform: translateX(50%);
+			rotate: 0deg;
 		}
 
-		.toggle-container.top {
-			position: absolute;
-			right: 50%;
-			top: 160px;
+		.toggle-container {
+			right: -35px;
+			bottom: 90px;
+			transform: scale(0.8);
+			rotate: 270deg;
+		}
+
+		.back-to-top {
+			rotate: 90deg;
+			bottom: 20px;
+			right: -10px;
+			transform: scale(0.8);
+			line-height: 0;
+		}
+
+		.back-to-top p {
+			rotate: 180deg;
+			font-weight: 500;
+			font-size: 24px;
 		}
 	}
 </style>

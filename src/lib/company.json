@@ -22,5 +22,30 @@
 	"Four Sons": {
 		"owner": "Four Sons Private Limited",
 		"description": "California Pizza, established in Karachi in 2012, now boasts two outlets. Renowned for its quality, service, and fresh ingredients, the chain caters to customers seeking tasty, balanced options without compromising on quality. With an expanding menu and network, California Pizza has served thousands of orders and participated in various events over the past year. Customers favor California Pizza for its innovative products, concepts, and consistently high service standards, impacting hundreds of thousands of lives daily."
+	},
+
+	"Khizer Baig": {
+		"owner": "Founder of Burger Lab",
+		"description": "The founder of Burger Lab Pakistan is not mentioned in the search results. However, Khizer Baig is the current CEO of Burger Lab. The success of Burger Lab is attributed to Khizer Baig's leadership and passion for building a mega brand in Pakistan. The brand has grown to 32 outlets across 9 cities in Pakistan in just 8 years, becoming a household name."
+	},
+
+	"One Potato, Two Potato": {
+		"owner": "Haris Khalid & Yahya Khalid",
+		"description": "OPTP (One Potato Two Potato) is a fast food chain based in Karachi, Pakistan, known for its Belgian fries. It began as a small family business by brothers Yahya Khalid and Haris Khalid and has since expanded to 64 locations across Pakistan, predominantly in Karachi, Lahore, and Islamabad. The chain continues to grow, adding more outlets nationally."
+	},
+
+	"Faheem Ashraf": {
+		"owner": "Founder of Cheezious",
+		"description": "Cheezious has marked its presence as one of the major fast-food brands. With the pride of being Pakistani at heart, it continues to compete at par with multinational brands that have been established and present for decades. With over 30 restaurants in Pakistan, it is one of the fastest-growing national fast-food chains. Cheezious Pakistan offers a wide variety of career opportunities for individuals who have a passion for learning and achieving great things."
+	},
+
+	"Howdy Group": {
+		"owner": "Ameer Khan",
+		"description": "HOWDY! is the pioneer in introducing high quality real charcoal grilled gourmet burgers in Pakistan. At Howdy! You will find a combination of excellent burgers, steaks, sandwiches and a lot more at value pricing, with a fun packaged atmosphere at our every outlet. The purpose is not only to serve great food but also make it a delightful experience for the guests."
+	},
+
+	"International Brand": {
+		"owner": "Why Boycott?",
+		"description": "Economically supports Israel"
 	}
 }
