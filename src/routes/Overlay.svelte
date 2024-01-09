@@ -32,47 +32,63 @@
 {/if}
 
 <style>
-	.overlay {
+	:global(body) .overlay {
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
 		background-color: rgb(16, 16, 16);
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
 		z-index: 999;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	:global(body) .overlay-content {
+		padding: 50px;
+		border-radius: 30px;
+
+		background: rgba(42, 42, 42, 0.586);
+		width: auto;
+		max-width: 500px;
+		text-align: left;
+		color: var(--lightColor);
 	}
 
 	.overlay-content h2 {
-		font-size: 2rem;
+		font-size: 1.9rem;
 		margin-bottom: 0.5rem;
-		font-weight: 600;
+		font-weight: 500;
 	}
 
 	.overlay-content h3 {
-		font-size: 1.5rem;
-		color: #ccc;
+		font-size: 1.3rem;
 		margin-bottom: 1rem;
 		font-weight: 400;
 	}
 
 	.overlay-content p {
 		font-size: 1rem;
-		line-height: 1.6;
+		line-height: 2;
 	}
 
-	.overlay-content {
-		padding: 50px;
-		border-radius: 5px;
+	/* Light Mode */
 
-		width: 100%;
-		height: 100%;
-		z-index: 1000;
+	:global(body.lightMode) .overlay {
+		color: var(--darkColor);
+		background-color: var(--lightColor);
+	}
 
-		color: var(--lightColor);
-		text-align: left;
-		max-width: 500px;
+	:global(body.lightMode) .overlay-content {
+		background: rgb(227, 227, 227);
+		color: var(--darkColor);
+	}
+
+	@media (max-width: 450px) {
+		.overlay-content {
+			transform: scale(0.85);
+		}
 	}
 </style>

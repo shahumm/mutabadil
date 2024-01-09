@@ -63,7 +63,7 @@
 	<a data-sveltekit-prefetch data-sveltekit-noscroll href="/">
 		<div class="logo">
 			<div class="white-circle">
-				<span class="logo-text">mutabadil</span>
+				<span class="logo-text">mutabadıl</span>
 			</div>
 		</div>
 	</a>
@@ -113,10 +113,15 @@
 		place-items: center left;
 	}
 
-	.logo-text {
+	:global(body) .logo-text {
 		font-size: 23px;
-		color: white;
+		color: var(--lightColor);
+
 		font-weight: 500;
+	}
+
+	:global(body.lightMode) .logo-text {
+		color: var(--darkColor);
 	}
 
 	button {

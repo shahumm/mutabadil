@@ -1,10 +1,26 @@
 {
 	"Fauji Foods": {
-		"owner": "Fauji Foundation",
-		"description": "Under the umbrella of the Fauji Group of Companies, with major shareholding by FFBL – Fauji Foods Limited was founded in 2015 after the acquisition of Noon Pakistan Limited, a company with an over 50-year dairy legacy in Pakistan. In February 2016, Fauji Foods introduced a new brand for the masses by the name of Dostea. Dostea is a liquid tea whitener which renders the perfect taste and colour you require from your daily cup of tea. Founded in 1966, the Companys brand Nurpur has been a household name across generations. After the acquisition, Fauji Foods relaunched the House of Nurpur in May 2016, thus reviving an age-old tradition of wholesome quality."
+		"owner": "Fauji Group",
+		"description": "Fauji Foods Limited, part of the Fauji Group, was established in 2015 by acquiring Noon Pakistan Limited, a company with over 50 years of dairy history in Pakistan. In 2016, Fauji Foods introduced Dostea, a liquid tea whitener, and relaunched its well-known brand, Nurpur, under the House of Nurpur, revitalizing a tradition of quality dating back to 1966."
 	},
+
 	"Dashi Foods": {
 		"owner": "Speciality Sales",
 		"description": "A few years ago, love for soup inspired us to create and perfect the recipe of a quick dissolving chicken powder. The launch of this chicken powder required a name and “Dashi“ being a specific type of stock, essential for all Japanese soups, was an appropriate choice. Appreciation for quality and taste from the consumers lead us to move ahead and today we are known as the pioneers of the said category in Pakistan."
+	},
+
+	"Zakori Group": {
+		"owner": "Habibullah Khan Zakori",
+		"description": "Zakori, a leader in industry and business innovation, focuses on sustainable and excellent practices. We revolutionize regional business, enhancing accessibility and growth, and have a history of pioneering streamlined operations with transparency. Our commitment to optimizing commercial success centers on customer loyalty and delivering key insights to stakeholders. At Zakori, continuous learning and development are paramount, establishing us as major business influencers for both immediate and future impact."
+	},
+
+	"Broadway Pizza": {
+		"owner": "Shahbaz Khan",
+		"description": "Shahbaz Khan is the owner and CEO of Broadway Pizza in Pakistan. The company was founded in 1992 and has grown to have 26 chain stores across the country. Shahbaz Khan has been leading and growing the successful pizza business"
+	},
+
+	"Four Sons": {
+		"owner": "Four Sons Private Limited",
+		"description": "California Pizza, established in Karachi in 2012, now boasts two outlets. Renowned for its quality, service, and fresh ingredients, the chain caters to customers seeking tasty, balanced options without compromising on quality. With an expanding menu and network, California Pizza has served thousands of orders and participated in various events over the past year. Customers favor California Pizza for its innovative products, concepts, and consistently high service standards, impacting hundreds of thousands of lives daily."
 	}
 }

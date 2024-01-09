@@ -3,10 +3,15 @@
 	import Overlay from './Overlay.svelte';
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
+	import boycottData from '$lib/boycottData.json';
 
 	let switchToLocal;
 	let wherePossible;
 	let searchBar;
+	let useBoycottData = false;
+
+	$: activeData = useBoycottData ? boycottData : dataTree;
+	$: filteredData = filterData(activeData[0]);
 
 	onMount(() => {
 		gsap.from([switchToLocal, wherePossible, searchBar, '.content-container'], {
@@ -120,7 +125,7 @@
 									titleValue = titleValue.filter((brand) => {
 										let match =
 											brand.brand.toLowerCase().includes(searchQueryLower) ||
-											(brand.company && brand.company.toLowerCase() === searchQueryLower); // Check if company name matches
+											(brand.company && brand.company.toLowerCase() === searchQueryLower);
 										if (match) brandMatches.push(brand);
 										return !match;
 									});
@@ -212,12 +217,25 @@
 </script>
 
 <main>
-	<button on:click={scrollToTop} class:show={showBackToTop} class="back-to-top">↑</button>
+	<!-- <button on:click={scrollToTop} class:show={showBackToTop} class="back-to-top">↑</button> -->
 
 	<div class="hero-section-container">
 		<section class="hero-section">
 			<div class="hero-container">
 				<div class="hero-container">
+					<div class="toggle-container" class:top={isAtTop} data-sveltekit-preload-data="hover">
+						{#if isAtTop}
+							<span class="label support">Support</span>
+						{/if}
+						<label class="switch">
+							<input type="checkbox" bind:checked={useBoycottData} />
+							<span class="slider round" />
+						</label>
+						{#if isAtTop}
+							<span class="label boycott">Boycott</span>
+						{/if}
+					</div>
+
 					<h2 bind:this={switchToLocal} class={isAtTop ? 'h2 addStroke' : ''}>Switch to local,</h2>
 					<span bind:this={wherePossible} class={isAtTop ? 'span addStroke' : ''}>
 						where possible.</span
@@ -243,16 +261,22 @@
 			{#if filteredData && Object.keys(filteredData).length > 0}
 				{#each Object.entries(filteredData) as [heading, subheadings]}
 					<div>
-						<h3>{heading}</h3>
+						<h3>
+							{heading}
+						</h3>
 						{#each Object.entries(subheadings) as [subheading, titles]}
 							<div>
-								<h4>{subheading}</h4>
+								<h4>
+									{subheading}
+									{#if useBoycottData}to Boycott{/if}
+								</h4>
 								{#each Object.entries(titles) as [title, items]}
 									<div>
 										<h5>{title}</h5>
 										<div class="cards-container">
 											{#each items as item, index}
 												<div
+													class:red-title={useBoycottData}
 													class={isAtTop ? 'card cardTopScroll' : 'card cardScrolled'}
 													on:click={() => openOverlay(item)}
 												>
@@ -274,7 +298,13 @@
 					</div>
 				{/each}
 			{:else}
-				<p>No matching items found.</p>
+				<div class="notfound">
+					<p>Oops! "{searchQuery}" does not exist in the database.</p>
+					<img
+						src="https://res.cloudinary.com/dw095oyal/image/upload/v1704749648/Products/No_data-cuate_ja0xvi.png"
+						alt=""
+					/>
+				</div>
 			{/if}
 		</div>
 	</section>
@@ -282,6 +312,130 @@
 </main>
 
 <style>
+	.notfound {
+		width: 100%;
+		display: grid;
+		place-items: center;
+		color: rgb(223, 223, 223);
+		font-size: 18px;
+		font-weight: 300;
+		text-align: center;
+	}
+
+	.notfound img {
+		width: 40%;
+	}
+
+	.red-title {
+		color: rgb(219, 65, 65);
+	}
+
+	.label {
+		font-size: 10px;
+	}
+
+	.toggle-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		position: fixed;
+		right: 0px;
+		bottom: 20px;
+		transition: transform 0.3s ease-in-out;
+	}
+
+	.label.support,
+	.label.boycott {
+		font-size: 15px;
+		font-weight: 400;
+		color: white;
+	}
+
+	.toggle-container.top {
+		position: absolute;
+		right: 50%;
+		bottom: 230px;
+		transform: translateX(50%);
+	}
+
+	/* .back-to-top {
+		bottom: 80px;
+	}
+
+	.back-to-top.show {
+		display: block;
+	}
+
+	.back-to-top {
+		padding: 10px 20px;
+		background-color: #333;
+		color: white;
+		border: none;
+		border-radius: 10px;
+		cursor: pointer;
+		display: none;
+		font-size: 24px;
+	}
+
+	.back-to-top.show {
+		display: block;
+	} */
+
+	.switch {
+		position: relative;
+		display: inline-block;
+		width: 120px;
+		height: 34px;
+		margin: 10px;
+	}
+
+	.switch input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+
+	.slider {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 30px;
+		right: 30px;
+		bottom: 0;
+		background-color: #77c564;
+		transition: 0.4s;
+		border-radius: 34px;
+	}
+
+	.slider:before {
+		position: absolute;
+		content: '';
+		height: 26px;
+		width: 26px;
+		left: 4px;
+		bottom: 4px;
+		background-color: white;
+		transition: 0.4s;
+		border-radius: 50%;
+	}
+
+	input:checked + .slider {
+		background-color: #dc4646;
+	}
+
+	input:checked + .slider:before {
+		transform: translateX(26px);
+	}
+
+	.slider.round {
+		border-radius: 34px;
+	}
+
+	.slider.round:before {
+		border-radius: 50%;
+	}
+
 	:global(body) .addStroke {
 		-webkit-text-fill-color: transparent;
 		-webkit-text-stroke-width: 1px;
@@ -502,6 +656,7 @@
 		width: 100%;
 		padding: 20px;
 
+		color: var(--darkColor);
 		border-radius: 15px;
 		border: none;
 		background-color: transparent !important;
@@ -520,6 +675,7 @@
 	:global(body.lightMode) #searchInput {
 		width: 100%;
 		padding: 15px;
+		color: var(--darkColor);
 
 		border-radius: 15px;
 		border: none;
@@ -564,7 +720,7 @@
 		position: relative;
 
 		padding: 10px;
-		opacity: 0.9;
+		opacity: 1;
 		z-index: 10;
 
 		transition: 0.5s ease;
@@ -678,7 +834,6 @@
 	.company-name {
 		align-self: flex-start;
 		margin-left: 10px;
-
 		transition: 0.25s ease;
 	}
 
@@ -712,6 +867,27 @@
 
 		.content-section .search-container {
 			padding-bottom: 110px;
+		}
+
+		.notfound {
+			font-size: 16px;
+		}
+
+		.notfound img {
+			width: 90%;
+		}
+
+		.toggle-container {
+			position: fixed;
+			top: 20px;
+			right: 20px;
+			transform: none;
+		}
+
+		.toggle-container.top {
+			position: absolute;
+			right: 50%;
+			top: 160px;
 		}
 	}
 </style>

@@ -4,45 +4,52 @@
 			"Fast Food": {
 				" ": [
 					{
-						"brand": "Ranchers",
-						"company": "Zakori Group",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704710014/Products/Ranchers_xeo7sz.png"
+						"brand": "McDonalds",
+						"company": "McDonalds",
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704710871/Products/Untitled-1_x8iq0p.png"
 					},
 					{
-						"brand": "OPTP",
-						"company": "One Potato, Two Potato",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704709604/Products/optp_ivnbp4.png"
+						"brand": "KFC",
+						"company": "Kentucky Friend Chicken",
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704710593/Products/kfc-logo-A232F2E6D1-seeklogo.com_wxyofc.png"
 					},
+					{
+						"brand": "Domino's Pizza",
+						"company": "Domino's",
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704710593/Products/dominos-logo-5599B3BFFA-seeklogo.com_pjilcf.png"
+					},
+					{
+						"brand": "Pizza Hut",
+						"company": "Pizza Hut",
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704710996/Products/png-clipart-pizza-hut-logo-symbol-franchising-gourmet-burgers-logo-franchising-thumbnail-removebg-preview_psd8oc.png"
+					},
+					{
+						"brand": "Tim Hortons",
+						"company": "Tim Hortons",
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704710594/Products/Tim-Hortons-Logo_owxoer.png"
+					},
+					{
+						"brand": "Burger King",
+						"company": "Papa Johns",
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704748330/Products/sada-removebg-preview_oexjw3.png"
+					},
+					{
+						"brand": "Hardee's",
+						"company": "Hardees",
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704748660/Products/gsfgfdgf_rdfdkj.png"
+					},
+					{
+						"brand": "Texas Chicken",
+						"company": "Papa Johns",
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704748459/Products/logoW_gnx3pu.png"
+					}
+				],
+
+				"pizza": [
 					{
 						"brand": "Burger Lab",
 						"company": "Khizer Baig",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704710079/Products/Burger-lab-Logo_i9uttp.png"
-					},
-					{
-						"brand": "The Fries Project",
-						"company": "The Fries Project",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704710205/Products/333906378_744967233725173_19091303053848184_n-removebg-preview_piy4ti.png"
-					},
-					{
-						"brand": "Howdy",
-						"company": "Howdy Group",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704710014/Products/howdy_avunb7.png"
-					},
-
-					{
-						"brand": "Cheezious",
-						"company": "Papa Johns",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704748104/Products/daadf_jwsl7w.png"
-					},
-					{
-						"brand": "Broadway Pizza",
-						"company": "Broadway Pizza",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704746572/Products/Untitled-1_ogwztx.png"
-					},
-					{
-						"brand": "California Pizza",
-						"company": "Four Sons",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704746806/Products/Untitled-1_qrtdjp.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/barley-removebg-preview_kwhgur.png"
 					}
 				]
 			},
