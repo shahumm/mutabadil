@@ -5,14 +5,31 @@
 	import { gsap } from 'gsap';
 	import boycottData from '$lib/boycottData.json';
 
+	// Variables
 	let switchToLocal;
 	let wherePossible;
 	let searchBar;
 	let useBoycottData = false;
+	let isAtTop = true;
+	let showBackToTop = false;
 
+	// Reactivity
 	$: activeData = useBoycottData ? boycottData : dataTree;
 	$: filteredData = filterData(activeData[0]);
 
+	// $: if (searchQuery) {
+	// 	searchData();
+	// } else {
+	// 	filteredData = filterData(dataTree[0]);
+	// }
+
+	$: if (searchQuery) {
+		searchData();
+	} else {
+		filteredData = sortBrands(filterData(dataTree[0]));
+	}
+
+	// GSAP
 	onMount(() => {
 		gsap.from([switchToLocal, wherePossible, searchBar, '.content-container'], {
 			y: 80,
@@ -64,7 +81,7 @@
 		isOverlayOpen = true;
 	}
 
-	// Tree Sort
+	// Tree Sort -- DFS
 	let searchQuery = '';
 	let filteredData = filterData(dataTree[0]);
 
@@ -92,13 +109,6 @@
 		}
 	}
 
-	// Reactivity
-	$: if (searchQuery) {
-		searchData();
-	} else {
-		filteredData = filterData(dataTree[0]);
-	}
-
 	// Tree Search
 	function searchData() {
 		filteredData = filterData(dataTree[0]);
@@ -111,6 +121,7 @@
 				let isHeadingMatched = key.toLowerCase().includes(searchQueryLower);
 				let subheadingMatches = {};
 
+				// Is key matching search entry?
 				if (typeof value === 'object' && value !== null) {
 					Object.entries(value).forEach(([subKey, subValue]) => {
 						let isSubheadingMatched = subKey.toLowerCase().includes(searchQueryLower);
@@ -155,8 +166,6 @@
 		}
 	}
 
-	let isAtTop = true;
-
 	onMount(() => {
 		function handleScroll() {
 			isAtTop = window.pageYOffset <= 10;
@@ -171,6 +180,7 @@
 		};
 	});
 
+	// Sorting Products
 	function sortBrands(data) {
 		const sortedData = {};
 		Object.entries(data).forEach(([key, value]) => {
@@ -188,14 +198,6 @@
 		});
 		return sortedData;
 	}
-
-	$: if (searchQuery) {
-		searchData();
-	} else {
-		filteredData = sortBrands(filterData(dataTree[0]));
-	}
-
-	let showBackToTop = false;
 
 	onMount(() => {
 		function handleScroll() {
@@ -219,15 +221,15 @@
 <main>
 	<button on:click={scrollToTop} class:show={showBackToTop} class="back-to-top"> <p>></p></button>
 
-	<div class="toggle-container" class:top={isAtTop} data-sveltekit-preload-data="hover">
-		{#if isAtTop}
+	<div class="toggle-container" class:top={!showBackToTop} data-sveltekit-preload-data="hover">
+		{#if !showBackToTop}
 			<span class="label support">Support</span>
 		{/if}
 		<label class="switch">
 			<input type="checkbox" bind:checked={useBoycottData} />
 			<span class="slider round" />
 		</label>
-		{#if isAtTop}
+		{#if !showBackToTop}
 			<span class="label boycott">Boycott</span>
 		{/if}
 	</div>
@@ -345,11 +347,16 @@
 		transition: transform 0.3s ease-in-out;
 	}
 
-	.label.support,
-	.label.boycott {
+	:global(body) .label.support,
+	:global(body) .label.boycott {
 		font-size: 15px;
 		font-weight: 400;
 		color: white;
+	}
+
+	:global(body.lightMode) .label.support,
+	:global(body.lightMode) .label.boycott {
+		color: black;
 	}
 
 	.toggle-container.top {
@@ -836,6 +843,7 @@
 		opacity: 0.6;
 	}
 
+	/* Phone */
 	@media (max-width: 450px) {
 		.cards-container {
 			grid-template-columns: 1fr;
@@ -846,12 +854,24 @@
 			display: none;
 		}
 
-		.hero-container {
-			transform: scale(0.9);
+		.content-container {
+			width: 75%;
+		}
+	}
+
+	/* Tablet */
+	@media (max-width: 1500px) {
+		.cards-container {
+			grid-template-columns: repeat(4, 1fr);
 		}
 
 		.content-container {
 			width: 75%;
+		}
+
+		.search-container::before,
+		.search-container::after {
+			display: none;
 		}
 
 		.content-section .search-container {
@@ -869,7 +889,7 @@
 		.toggle-container.top {
 			right: 50%;
 			top: 0px;
-			bottom: 100px;
+			bottom: 150px;
 			transform: translateX(50%);
 			rotate: 0deg;
 		}
@@ -889,10 +909,44 @@
 			line-height: 0;
 		}
 
+		.hero-container {
+			transform: scale(0.9);
+		}
+
 		.back-to-top p {
 			rotate: 180deg;
 			font-weight: 500;
 			font-size: 24px;
+		}
+	}
+
+	@media (max-width: 1250px) {
+		.cards-container {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.content-container {
+			width: 75%;
+		}
+
+		.search-container::before,
+		.search-container::after {
+			display: none;
+		}
+	}
+
+	@media (max-width: 860px) {
+		.cards-container {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.content-container {
+			width: 75%;
+		}
+
+		.search-container::before,
+		.search-container::after {
+			display: none;
 		}
 	}
 </style>

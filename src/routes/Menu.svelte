@@ -49,14 +49,14 @@
 	<a class="menu-item" href="/" on:click={handleItemClick}>Products</a>
 	<a class="menu-item" href="/about" on:click={handleItemClick}>Why Boycott?</a>
 
-	<p class="sub-heading">SUGGESTION</p>
-	<a
+	<p class="sub-heading">SUGGEST PRODUCT</p>
+	<!-- <a
 		class="menu-item smaller"
 		href="https://www.instagram.com/galacticsapien"
 		on:click={handleItemClick}>Instagram</a
-	>
+	> -->
 	<a class="menu-item smaller" href="mailto:hello@shahum.art" on:click={handleItemClick}
-		>hello@shahum.art</a
+		>suggest@mutabadil.app</a
 	>
 </div>
 

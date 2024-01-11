@@ -47,5 +47,39 @@
 	"International Brand": {
 		"owner": "Why Boycott?",
 		"description": "Economically supports Israel"
+	},
+
+	"Adam's Milk Foods": {
+		"owner": "Adam Milk & Food Pvt. Limited.",
+		"description": "Adam Milk Foods Limited is Pakistan's largest selling cheese brand. It has been in the business of cheese making for the past three decades. Starting off in the early 1980s as an association of partners, Adam Milk Foods was incorporated in 1993 and has since grown steadily to become a recognized and trusted dairy foods producer with a nation-wide distribution and sales network. Adam's has developed its product portfolio over the years and now carries fresh milk, butter, yoghurt, lassi, raita, desi ghee and a wide variety of cheeses."
+	},
+
+	"Sharif Group": {
+		"owner": "Sharif Group of Companies",
+		"description": "Sharif Group’s roots can be traced back to the year 1937. From its humble beginnings as a small steel melting unit, it has spanned multiple generations and expanded into a massive business conglomerate with its foothold in many industries."
+	},
+
+	"DairyLand": {
+		"owner": "Akhtar Group",
+		"description": "In 2009, Akhtar Group ventured into Pakistan’s dairy sector by establishing Dairyland (Pvt) Ltd. The company started its operations by setting up a state-of-the-art dairy farm in Dhabeji, district Sujawal in Sindh with premium breed Australian cows. Subsequently, it also established modern milk, and yogurt processing and packaging plant next to the dairy farm."
+	},
+
+	"Shakarganj Food Products": {
+		"owner": "Shakarganj Food Products Ltd.",
+		"description": "In 2009, Akhtar Group ventured into Pakistan’s dairy sector by establishing Dairyland (Pvt) Ltd. The company started its operations by setting up a state-of-the-art dairy farm in Dhabeji, district Sujawal in Sindh with premium breed Australian cows. Subsequently, it also established modern milk, and yogurt processing and packaging plant next to the dairy farm."
+	},
+
+	"Gourmet Foods": {
+		"owner": "Gourmet Foods",
+		"description": "Since the time of its origin 33 years ago, Gourmet has believed in providing high quality, hygienic products at affordable prices to customers from all social and economical classes without any discrimination. Keeping this as the foundation of our business has helped us make home in our consumers' hearts and minds alike. Today it gives us immense pleasure to see consumers buy Gourmet products not just for their taste or quality but for the trust and credibility that comes with it."
+	},
+
+	"Engro Foods": {
+		"owner": "Engro Corp.",
+		"description": "For nearly 6 decades, Engro Corporation Limited has been working toward its vision of becoming the premier Pakistani company with a global reach. Now, Engro is one of the Country’s largest conglomerates and has businesses in 4 verticals: food & agriculture, energy & related infrastructure, petrochemicals, and telecommunication infrastructure."
+	},
+	"At-Tahur Limited": {
+		"owner": "At-Tahur Limited",
+		"description": "Inspired by the Arabic word “Tahur” which literally translated means “Purity”. At-Tahur Limited (PSX: PREMA) has since its inception in 2007 strived to provide its consumers with dairy products the way nature intended them to be. This is why At-Tahur’s Premá milk brand launched in 2008 has in a short span of time become a household name in Pakistan for its 100% natural purity & freshness. Ensuring highest production, processing and packaging standards, Premá milk is the only milk in Pakistan that is free of all kinds of additives and artificial growth hormones and completely traceable from Grass to Glass."
 	}
 }

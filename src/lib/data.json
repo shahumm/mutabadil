@@ -65,9 +65,7 @@
 						"company": "Dashi Foods",
 						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704561327/Products/Screenshot_2024-01-06_at_22.14.44-removebg-preview_j55b84.png"
 					}
-				],
-				"pasta": [],
-				"rice": []
+				]
 			},
 
 			"dairy": {
@@ -80,7 +78,7 @@
 					{
 						"brand": "Olpers",
 						"company": "Engro Foods",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/nurpur-removebg-preview_tgmmsg.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704818369/Products/Screenshot_2024-01-09_at_21.38.54-removebg-preview_isotdu.png"
 					},
 					{
 						"brand": "Prema",
@@ -100,7 +98,7 @@
 					{
 						"brand": "Good Milk",
 						"company": "Shakarganj Food Products",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/nurpur-removebg-preview_tgmmsg.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704818544/Products/1017654-1-removebg-preview_fopco6.png"
 					},
 					{
 						"brand": "Adams Milk",
@@ -110,7 +108,7 @@
 					{
 						"brand": "Gourmet Milk",
 						"company": "Gourmet Foods",
-						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704348535/Products/nurpur-removebg-preview_tgmmsg.png"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704818455/Products/7eff6bcb7453938cadebfe2b80355e5cb01c479a-removebg-preview_fu1fwb.png"
 					}
 				],
 
@@ -118,22 +116,22 @@
 					{
 						"brand": "Nurpur Cheese",
 						"company": "Fauji Foods",
-						"image": "https://www.placehold.co/500x500"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704818004/Products/1014820-1-removebg-preview_fdt3hy.png"
 					},
 					{
 						"brand": "Prema Cheese",
 						"company": "Al-Tahur Limited",
-						"image": "https://www.placehold.co/500x500"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704818004/Products/12636471-0-M-removebg-preview_hrzuu4.png"
 					},
 					{
 						"brand": "Olpers Cheese",
 						"company": "Engro Foods",
-						"image": "https://www.placehold.co/500x500"
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704818269/Products/Untitled-1_azyrwx.png"
 					},
 					{
-						"brand": "Adams Cheese",
-						"company": "Adams Milk Foods",
-						"image": "https://www.placehold.co/500x500"
+						"brand": "Puck Cheese",
+						"company": "Puck Cheese",
+						"image": "https://res.cloudinary.com/dw095oyal/image/upload/v1704818004/Products/Screenshot_2024-01-09_at_21.31.55-removebg-preview_qpcnbh.png"
 					}
 				],
 
@@ -304,27 +302,6 @@
 						"image": "https://www.placehold.co/500x500"
 					}
 				]
-			},
-
-			"beverages": {
-				"soft drinks": [],
-				"juices": [],
-				"water": []
-			},
-			"condiments & sauces": {
-				"ketchup": [],
-				"mayonnaise": [],
-				"mustard": []
-			},
-			"frozen foods": {
-				"vegetables": [],
-				"meals": [],
-				"ice cream": []
-			},
-			"baking goods": {
-				"flour": [],
-				"sugar": [],
-				"baking mixes": []
 			}
 		},
 
@@ -356,7 +333,7 @@
 				]
 			},
 			"soaps": {
-				"personal": [
+				"personal care": [
 					{
 						"brand": "Dettol",
 						"company": "Fauji Foods",

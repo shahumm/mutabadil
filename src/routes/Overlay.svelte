@@ -78,11 +78,11 @@
 
 	:global(body.lightMode) .overlay {
 		color: var(--darkColor);
-		background-color: var(--lightColor);
+		background-color: rgb(206, 206, 206);
 	}
 
 	:global(body.lightMode) .overlay-content {
-		background: rgb(227, 227, 227);
+		background: rgb(221, 221, 221);
 		color: var(--darkColor);
 	}
 
